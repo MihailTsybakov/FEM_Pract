@@ -1,6 +1,6 @@
 # FEM_Pract
 Finite Element Method realisation
-![fem_logo](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/3bc79ded-93c1-47f1-b018-61808ea22b61)
+![Sample_Mesh](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/fe394cd4-4eba-4bba-b506-5d2d22942e51)
 
 Mesh generation via GMSH library
 ~ https://gmsh.info/doc/texinfo/gmsh.html
