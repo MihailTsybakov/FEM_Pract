@@ -7,5 +7,6 @@ Mesh generation via GMSH library
 
 Incidence matrix for example mesh
 
-![image](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/a7c62ce8-b3c8-4281-bbbf-7e0719d5cc66)
+![cuthill_Mckee](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/e057f6b7-88e1-4fee-adde-f135a40a6b91)
+
 
