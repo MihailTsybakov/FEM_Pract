@@ -4,6 +4,7 @@ Finite Element Method realisation
 
 Mesh generation via GMSH library
 ~ https://gmsh.info/doc/texinfo/gmsh.html
+<<<<<<< Updated upstream
 
 Incidence matrix for example mesh
 
@@ -11,3 +12,5 @@ Incidence matrix for example mesh
 
 
 
+=======
+>>>>>>> Stashed changes
