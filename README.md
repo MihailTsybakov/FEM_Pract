@@ -12,4 +12,5 @@ Incidence matrix for example mesh
 
 Solved problem example: sigma_yy stresses field
 
-![image](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/09595a22-e688-4b36-bba0-0ac85427e3f7)
+![image](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/7c386e6f-ee42-4c53-b009-9bbbfcd0838b)
+
