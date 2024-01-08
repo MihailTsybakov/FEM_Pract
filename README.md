@@ -1,8 +1,10 @@
 # FEM_Pract
 Finite Element Method realisation
 <hr>
+UAZ-469 Frame example load:
 
-![uaz_frame_composed_res](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/22b39bdf-002a-480f-8b4a-611360a43f1f)
+![uaz_frame_composed_res](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/4a1af4bd-9b6f-427f-a193-ef1b5803279b)
+
 
 
 ![Sample_Mesh](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/fe394cd4-4eba-4bba-b506-5d2d22942e51)
