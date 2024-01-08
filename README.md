@@ -1,5 +1,10 @@
 # FEM_Pract
 Finite Element Method realisation
+<hr>
+
+![uaz_frame_composed_res](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/22b39bdf-002a-480f-8b4a-611360a43f1f)
+
+
 ![Sample_Mesh](https://github.com/MihailTsybakov/FEM_Pract/assets/62279777/fe394cd4-4eba-4bba-b506-5d2d22942e51)
 
 Mesh generation via GMSH library
