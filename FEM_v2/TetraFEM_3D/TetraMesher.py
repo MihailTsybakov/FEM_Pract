@@ -22,7 +22,7 @@ def build_tetramesh(stl_path, max_volume, elem_quality = 1.5):
     """
     pass
 
-import tetgen
+import tetgen, meshio
 import numpy as np
 import open3d as o3d
 
@@ -42,12 +42,16 @@ faces = np.array([
     [1, 2, 3]
 ])
 
+stl_mesh = meshio.read(r'C:\Users\Михаил\Desktop\Prog\Python\FEM_Pract\FEM_v2\Data\beam_1.stl')
+vertices = stl_mesh.points 
+faces = np.array(stl_mesh.cells[0].data)
+
 # Create a TetGen object and set up the mesh
 tet = tetgen.TetGen(vertices, faces)
 
 # Perform tetrahedral meshing with quality and max volume control
 # Use the `a` flag for maximum tetrahedron volume and `q` for quality mesh
-tet.tetrahedralize(switches='pq1.8a0.0005')
+tet.tetrahedralize(switches='pq1.8a0.0002')
 #print(res)
 tet.write('debug.vtk')
     
