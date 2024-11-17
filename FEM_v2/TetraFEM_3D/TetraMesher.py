@@ -3,7 +3,7 @@
 """
 
 
-#import tetgen, meshio, numpy as np
+import tetgen, meshio, numpy as np
 from Misc import *
 
 
@@ -20,40 +20,24 @@ def build_tetramesh(stl_path, max_volume, elem_quality = 1.5):
     returns:
         mesh (list): tetra mesh nodes and cells data
     """
-    pass
 
-import tetgen, meshio
-import numpy as np
-import open3d as o3d
+    log_msg(f'Input file for meshing: [{stl_path}]')
 
-# Define sample vertices and faces for a simple triangular mesh (e.g., a tetrahedron)
-# Replace with your actual mesh vertices and faces
-vertices = np.array([
-    [0, 0, 0],
-    [1, 0, 0],
-    [0, 1, 0],
-    [0, 0, 1]
-])
+    stl_mesh = meshio.read(stl_path)
+    stl_verts = np.array(stl_mesh.points)
+    stl_faces = np.array(stl_mesh.cells[0].data)
 
-faces = np.array([
-    [0, 1, 2],
-    [0, 1, 3],
-    [0, 2, 3],
-    [1, 2, 3]
-])
+    log_msg(f'Original STL Surface: N_verts = {len(stl_verts)}, N_faces = {len(stl_faces)}')
 
-stl_mesh = meshio.read(r'C:\Users\Михаил\Desktop\Prog\Python\FEM_Pract\FEM_v2\Data\beam_1.stl')
-vertices = stl_mesh.points 
-faces = np.array(stl_mesh.cells[0].data)
+    tet = tetgen.TetGen(stl_verts, stl_faces)
+    nodes, cells = tet.tetrahedralize(switches = f'pq{elem_quality}a{max_volume}')
 
-# Create a TetGen object and set up the mesh
-tet = tetgen.TetGen(vertices, faces)
+    log_msg(f'Mesh built: N_verts = {len(nodes)}, N_tetra = {len(cells)}')
 
-# Perform tetrahedral meshing with quality and max volume control
-# Use the `a` flag for maximum tetrahedron volume and `q` for quality mesh
-tet.tetrahedralize(switches='pq1.8a0.0002')
-#print(res)
-tet.write('debug.vtk')
-    
-#stl_path = r'C:\Users\Михаил\Desktop\Prog\Python\FEM_Pract\FEM_v2\Data\Bunny_v1.stl'
-#build_tetramesh(stl_path, max_volume = 0.1, elem_quality = 1.5)
+    save_path = r'Mesh.vtk'
+    tet.write(save_path)
+    log_msg(f'Mesh saved into [{save_path}]')
+
+    return nodes, cells
+
+
